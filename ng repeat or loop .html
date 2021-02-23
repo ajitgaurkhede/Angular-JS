@@ -1,0 +1,57 @@
+
+<html>
+	<head>
+		<script
+		src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"
+		type = "text/javascript">
+		</script>
+		<script src = "Script2.js"> </script>
+		</head>
+		<body >
+		<section>
+		<div ng-app = "repeatModule" ng-controller = "repeatController">
+		<table>
+			<thead>
+				<tr>
+					<th>Firstname</th>
+					<th>Lastname</th>
+					<th>Gender</th>
+					<th>Salary</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = " x in emp">
+					<td>{{ x.firstName}}</td>
+					<td>{{ x.lastName}}</td>
+					<td>{{ x.gender}}</td>
+					<td>{{ x.salary}}</td>
+					</tr>
+				</tbody>
+		</table>
+		</div>
+		</section>
+		
+		
+		<div  ng-app = "repeatMod" ng-controller = "repitController">
+		
+		{{msg}}
+			<ul>
+				<li ng-repeat = "j in countries">
+				{{ j.name}}
+				<ul>
+					<li ng-repeat ="city in j.cities">
+					{{city.name}}
+					
+					</li>
+			
+				</ul>
+				</li>
+			</ul>		
+		</div>
+
+			
+			</body>
+			</html>
+			
+			
+		

@@ -1,0 +1,39 @@
+
+<html>
+	<head>
+		<script
+		src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"
+		type = "text/javascript">
+		</script>
+		<script src = "Script.js"> </script>
+		<link href = "Style.css" rel="stylesheet"/>
+		</head>
+		<body ng-app = "myModule" ng-controller = "myController">
+		<div>
+		Rows to display :<input type ="number" step="1" min ="0" max="5" ng-model ="rowLimit"/>
+		<br/> <br />
+		<table>
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Date of Birth </th>
+					<th>Gender</th>
+					<th>Salary(number)</th>
+					<th>Salary(currency)</th>
+					
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat = "e in emp | limitTo:rowLimit">
+				<td>{{e.name | uppercase}}</td>
+				<td>{{e.dateOfBirth | date: "dd/MM/yyyy"}}</td>
+				<td>{{e.gender | lowercase}}</td>
+				<td>{{e.salary | number:2}}</td>
+				<td>{{e.salary | currency:"$":1}}</td>
+				</tr>
+				<tbody>
+				</div>
+		</table>
+			</body>
+			</html>
+			

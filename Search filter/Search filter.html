@@ -1,0 +1,50 @@
+
+<html>
+	<head>
+		<script
+		src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"
+		type = "text/javascript">
+		</script>
+		<script src = "Script.js"> </script>
+		<link href = "Style.css" rel="stylesheet"/>
+		</head>
+		<body ng-app = "myModule" ng-controller = "myController">
+		Search : <input type ="text" placeholder ="Search employess" ng-model ="searchText.name"/>
+		<br /><br />
+		<div>
+		<table>
+				<thead>
+				<tr>
+					
+					<th ng-click = "sortData('name')">
+					Name<div ng-class = "getSortClass('name')"</div>
+					</th>
+					
+					<th ng-click = "sortData('dateOfBirth')">
+					Date of Birth <div ng-class = "getSortClass('dateOfBirth')"</div>
+					</th>
+					
+					<th ng-click = "sortData('gender')">
+					Gender<div ng-class = "getSortClass('gender')"</div>
+					</th>
+					
+					<th ng-click = "sortData('salary')">
+					Salary<div ng-class = "getSortClass('gender')"</div>
+					</th>
+					
+				</tr>
+				</thead>
+				<tbody>
+				<!--<tr ng-repeat = "e in emp | orderBy:'-name'">-->
+				<tr ng-repeat = "e in emp | filter:searchText">
+				<td>{{e.name | uppercase}}</td>
+				<td>{{e.dateOfBirth | date: "dd/MM/yyyy"}}</td>
+				<td>{{e.gender | lowercase}}</td>
+				<td>{{e.salary | number:2}}</td>
+				</tr>
+				<tbody>
+				</div>
+		</table>
+			</body>
+			</html>
+			

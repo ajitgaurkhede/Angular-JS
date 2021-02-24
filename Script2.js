@@ -13,9 +13,57 @@ var app = angular
 					]
 					$scope.emp = employee;
 					
+					
+					
+					var countries = [
+					
+					{
+						name: "UK",
+						cities:[
+						
+						{name: "London"},
+						{name: "Manchester"},
+						{name:	"Bimrmingham"}
+					
+						]
+						
+					},
+					
+					{
+						name: "USA",
+						cities:[
+						
+						{name: "Los Angeles"},
+						{name: "Chicago"},
+						{name:	"Houston"}
+					
+						]
+						
+					},
+					
+					{
+						name: "India",
+						cities:[
+						
+						{name: "Hyderabad"},
+						{name: "Chennai"},
+						{name:	"Mumbai"}
+					
+						]
+						
+					}
+					
+					
+					];
+					
+					$scope.countries = countries;
+					
+					$scope.msg = "hello";
+					
+
 				});
 				
-	var app2 = angular
+	/*var app2 = angular
 				.module("repeatMod",[])
 				.controller("repitController",function($scope){
 					
@@ -64,4 +112,4 @@ var app = angular
 					
 					$scope.msg = "hello";
 					
-				});
+				});*/

@@ -11,11 +11,11 @@
 		<div ng-app = "repeatMod" ng-controller = "repitController">
 		{{msg}}
 			<ul>
-				<li ng-repeat = "j in countries">
-				{{ j.name}}
+				<li ng-repeat = "j in countries" ng-init = "parentIndex=$index">
+				{{ j.name}} - Index = {{ $index }}
 				<ul>
 					<li ng-repeat ="city in j.cities">
-					{{city.name}}
+					{{city.name}} -Parent Index ={{parentIndex}} - Index = {{ $index }}
 					
 					</li>
 			

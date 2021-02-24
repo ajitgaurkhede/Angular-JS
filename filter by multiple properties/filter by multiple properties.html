@@ -1,0 +1,50 @@
+
+<html>
+	<head>
+		<script
+		src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"
+		type = "text/javascript">
+		</script>
+		<script src = "Script.js"> </script>
+		<link href = "Style.css" rel="stylesheet"/>
+		</head>
+		<body ng-app = "myModule" ng-controller = "myController">
+		<!--<input type = "text" ng-model = "searchText.name" placeholder ="Search name" />
+		<input type = "text" ng-model = "searchText.gender" placeholder ="Search gender" />
+		<input type ="checkbox" ng-model ="exactMatch"/> ExactMatch-->
+		<input type = "text" ng-model = "searchText" placeholder ="Search name & gender" />
+		<br /> <br />
+		
+		<input type = "checkbox" ng-model= "hideSalary" /> Hide Salary
+		
+		<br /> <br />
+		
+
+		<div>
+		<table>
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Date of Birth </th>
+					<th>Gender</th>
+					<!--<th ng-hide = "hideSalary">Salary</th>-->
+					<th ng-hide = "hideSalary">Salary</th>
+					<th ng-show = "hideSalary">Salary</th>
+				</tr>
+				</thead>
+				<tbody>
+				<!--<tr ng-repeat = "e in emp | orderBy:'-name'">-->
+				<tr ng-repeat = "e in emp | filter:search">
+				<td>{{e.name | uppercase}}</td>
+				<td>{{e.dateOfBirth | date: "dd/MM/yyyy"}}</td>
+				<td>{{e.gender | lowercase}}</td>
+				<!--<td ng-hide = "hideSalary">{{e.salary | number:2}}</td>-->
+				<td ng-hide = "hideSalary">{{e.salary | number:2}}</td>
+				<td ng-show = "hideSalary">####</td>
+				</tr>
+				<tbody>
+				</div>
+		</table>
+			</body>
+			</html>
+			
